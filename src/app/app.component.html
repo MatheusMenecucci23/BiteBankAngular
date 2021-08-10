@@ -1,9 +1,9 @@
-<!--recebemos o valor através do evento(aoTransferir) e propagamos para o método Appcomponent no arquivo app.component.ts com o ="transferir($event-palavra reservado do angular)"-->
-<app-nova-transferencia
-  (aoTransferir)="transferirC($event)"><!--$event recebe os valores que o aoTransferir passa-->
-</app-nova-transferencia>
-
-<!--Exibindo o extrato-->
-<app-extrato [transferencias1]="transferencias"></app-extrato><!--passando a variável transferência do arquivo app.component.ts
-  para o @Input do extrato.component.ts receber-->
-
+<header>
+  <a routerLink="extrato">Extrato</a>
+  <a routerLink="nova-transferencia" routerLinkActive="ativo">Nova Transferência</a>
+  <!--routerLink funciona quase igual a um href só que não atualiza a página-->
+  <!--routerLinkActive adiciona uma classe, no caso a classe css ativo, quando o usuário estiver na página referenciada, no caso nova transferencia-->
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>

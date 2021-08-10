@@ -1,3 +1,5 @@
+import { Transferencia } from './../models/transferencia.models';
+import { TransferenciaService } from './../services/transferencia.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -6,12 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./extrato.component.scss']
 })
 export class ExtratoComponent implements OnInit {
+  transferencias1: any[];
 
-  @Input() transferencias1: any[];//definindo uma variável de entrada com @Input do tipo any[]
-  //com o @Input podemos receber uma variável referenciada no app.component
-  constructor() { }
+  constructor(private service: TransferenciaService) { }//inicializando o service
 
-  ngOnInit(): void {
+  ngOnInit(){//imprimindo os extratos
+    this.service.todas().subscribe((transferencias: Transferencia[]) => {
+      console.table(transferencias);//imprimindo em uma tabela
+      this.transferencias1 = transferencias//imprimindo os extratos
+    });
   }
 
 }
