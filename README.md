@@ -2,6 +2,11 @@
 
 # Caminho para achar a aplicação desenvolvida por mim: src>app
 
+
+![Animação-bytebank1](https://user-images.githubusercontent.com/72262553/128869635-607c3ac9-ecef-4e0d-86dc-b6cf1c00c154.gif)
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.6.
 
 ## Development server
